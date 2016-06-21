@@ -19,16 +19,18 @@
 
       <div class = "emp">{{ title }}</div>
       <div>{{ plot }}</div>
-
       <img v-if = "posterSrc != '' " src = "{{ posterSrc }}"></img>
 
-      <button v-if = "favButton === true" v-on:click = "addFav(title)">Add to favorites</button>
+      <button v-if = "favButton === true" v-on:click = "addFav(title, rating)">Add to favorites</button>
     </div>
 
     <div id = "right">
       <div class = "emp">Your Favorites</div>
       <div v-for = "favorite in favorites">
-        <button v-on:click = "getMovie(favorite.fav)">View</button>{{ favorite.fav }}<button v-on:click = "deleteFav()">Delete</button>
+        <button v-on:click = "getMovie(favorite.fav">View</button>
+        {{ favorite.fav }}
+        Rating: {{ favorite.rate }}
+        <button v-on:click = "deleteFav()">Delete</button>
       </div>
     </div>
 

@@ -7,6 +7,7 @@ var ToriApp = new Vue({
     title: '',
     plot: '',
     posterSrc: '',
+    rating: '',
     favorites: []
   },
   methods: {
@@ -18,16 +19,18 @@ var ToriApp = new Vue({
         url: 'http://www.omdbapi.com/?t=' + query + '&y=&plot=short&r=json',
         method: 'GET',
       }).done(function (data) {
+        console.log(data);
         ToriApp.$set("title", data.Title);
         ToriApp.$set("plot", data.Plot);
         ToriApp.$set("posterSrc", data.Poster);
+        ToriApp.$set("rating", data.Rated);
         ToriApp.$set("favButton", true);
       });
     },
 
-    addFav: function(title){
+    addFav: function(title, rating){
       console.log(title);
-      ToriApp.favorites.push({ fav: title})
+      ToriApp.favorites.push({ fav: title, rate: rating})
       console.log(ToriApp.favorites)
     },
 
