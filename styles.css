@@ -1,0 +1,26 @@
+body {
+  font-family: sans-serif;
+}
+
+#left {
+  margin: 5%;
+  float: left;
+}
+
+#right {
+  margin: 5%;
+  float: left;
+}
+
+img {
+  width: 200px;
+  display: block;
+}
+
+.emp{
+  font-weight: bold;
+}
+
+button {
+  margin: 2% 0;
+}
