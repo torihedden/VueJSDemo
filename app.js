@@ -35,6 +35,7 @@ var ToriApp = new Vue({
     },
 
     deleteFav: function(index){
+      console.log(index);
       ToriApp.favorites.splice(index, 1);
     }
 
