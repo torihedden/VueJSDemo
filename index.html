@@ -27,7 +27,7 @@
     <div id = "right">
       <div class = "emp">Your Favorites</div>
       <div v-for = "favorite in favorites">
-        <button v-on:click = "getMovie(favorite.fav">View</button>
+        <button v-on:click = "getMovie(favorite.fav)">View</button>
         {{ favorite.fav }}
         Rating: {{ favorite.rate }}
         <button v-on:click = "deleteFav()">Delete</button>
