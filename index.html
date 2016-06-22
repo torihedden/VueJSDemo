@@ -30,7 +30,7 @@
         <button v-on:click = "getMovie(favorite.fav)">View</button>
         {{ favorite.fav }}
         Rating: {{ favorite.rate }}
-        <button v-on:click = "deleteFav()">Delete</button>
+        <button v-on:click = "deleteFav($index)">Delete</button>
       </div>
     </div>
 
