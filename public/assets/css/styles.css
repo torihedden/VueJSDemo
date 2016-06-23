@@ -1,0 +1,60 @@
+body {
+  font-family: sans-serif;
+  box-sizing: border-box; }
+  body #header {
+    padding: 2%; }
+    body #header .search-fav {
+      float: right; }
+  body #left {
+    padding: 2%;
+    display: inline-block;
+    width: 45%; }
+    body #left .query-title {
+      margin: 5% 0; }
+    body #left img {
+      width: 150px;
+      display: block;
+      margin: 5% 0; }
+    body #left .add-fav {
+      margin: 5% 0; }
+  body #right {
+    padding: 2%;
+    width: 45%;
+    height: 75%;
+    display: inline-block; }
+    body #right #fav-menu #title-sort {
+      margin-left: 2%;
+      width: 30%;
+      text-align: center; }
+    body #right .view-button-wrap {
+      width: 15%;
+      display: inline; }
+    body #right #fav-title {
+      width: 30%;
+      display: inline-block;
+      text-align: left; }
+    body #right #rating {
+      width: 15%;
+      display: inline-block;
+      text-align: center; }
+    body #right #year {
+      width: 10%;
+      display: inline-block;
+      text-align: center;
+      margin-right: 10px; }
+    body #right .delete {
+      background-color: red;
+      color: white; }
+    body #right .view {
+      background-color: blue;
+      color: white; }
+    body #right .entry:nth-child(2n+1) {
+      background: lightgray; }
+    body #right .entry:nth-child(2n+2) {
+      background: white; }
+    body #right .entry {
+      padding: 10px; }
+  body .emp {
+    font-weight: bold; }
+
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,105 @@
+$title-width: 30%;
+$view-button-width: 15%;
+
+body {
+  font-family: sans-serif;
+  box-sizing: border-box;
+
+  #header {
+    // border: solid 1px green;
+    padding: 2%;
+
+    .search-fav {
+      float: right;
+    }
+  }
+
+  #left {
+    // border: solid 1px red;
+    padding: 2%;
+    display: inline-block;
+    width: 45%;
+    .query-title {
+      margin: 5% 0;
+    }
+
+    img {
+      width: 150px;
+      display: block;
+      margin: 5% 0;
+    }
+    .add-fav {
+      margin: 5% 0;
+    }
+  }
+
+  #right {
+    // border: solid 1px blue;
+    padding: 2%;
+    width: 45%;
+    height: 75%;
+    display: inline-block;
+    #fav-menu {
+      // border: solid 1px red;
+      #title-sort {
+        margin-left: 2%;
+        // border: solid 2px green;
+        width: $title-width;
+        text-align: center;
+      }
+    }
+
+    .view-button-wrap {
+      width: $view-button-width;
+      display: inline;
+    }
+
+    #fav-title {
+      width: $title-width;
+      display: inline-block;
+      text-align: left;
+      // border: solid 1px red;
+    }
+    #rating {
+      width: 15%;
+      display: inline-block;
+      text-align: center;
+    }
+    #year {
+      width: 10%;
+      display: inline-block;
+      text-align: center;
+      // border: solid 1px purple;
+      margin-right: 10px;
+    }
+
+    .delete {
+      background-color: red;
+      color: white;
+    }
+
+    .view {
+      background-color: blue;
+      color: white;
+    }
+
+    $colors: lightgray, white;
+
+    @for $i from 1 through length($colors){
+      .entry:nth-child(#{length($colors)}n+#{$i}) {
+		background: nth($colors, $i);
+	    }
+    }
+
+    .entry {
+      padding: 10px;
+    }
+
+  }
+
+  .emp {
+    font-weight: bold;
+  }
+
+
+}

@@ -3,40 +3,47 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <link rel = "stylesheet" href = "styles.css">
+    <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel = "stylesheet" href = "assets/css/styles.css">
   </head>
   <body>
 
-    <div class = "emp">Vue JS Demo App</div>
-
     <div id="app">
+      <div id = "header">
+        <div class = "emp">Vue JS Demo App</div>
+        <div>{{ message }}</div>
+        <input v-model = "query"></input>
+        <button v-on:click = "getMovie(query)">Click me!</button>
+
+        <input v-model = "fav" placeholder= "Search your favorites" class = "search-fav"></input>
+    </div>
+
     <div id = "left">
-      <div>{{ message }}</div>
-
-      <input v-model = "query"></input>
-
-      <button v-on:click = "getMovie(query)">Click me!</button>
-
-      <div class = "emp">{{ title }}</div>
+      <div class = "emp query-title">{{ title }}</div>
       <div>{{ plot }}</div>
       <img v-if = "posterSrc != '' " src = "{{ posterSrc }}"></img>
 
-      <button v-if = "favButton === true" v-on:click = "addFav(title, rating)">Add to favorites</button>
+      <button v-if = "favButton === true" v-on:click = "addFav(title, rating)" class = "add-fav">Add to favorites</button>
     </div>
 
     <div id = "right">
       <div class = "emp">Your Favorites</div>
-      <div v-for = "favorite in favorites">
-        <button v-on:click = "getMovie(favorite.fav)">View</button>
-        {{ favorite.fav }}
-        Rating: {{ favorite.rate }}
-        <button v-on:click = "deleteFav($index)">Delete</button>
+
+
+
+      <div v-for = "favorite in favorites | filterBy fav in 'fav' " class = "entry">
+          <div id = "fav-title">{{ favorite.fav }}</div>
+          <div id = "rating">{{ favorite.rate }}</div>
+          <div id = "year">{{ favorite.date }}</div>
+
+        <button v-on:click = "getMovie(favorite.fav)" class = "view">View</button>
+        <button v-on:click = "deleteFav($index)" class = "delete">Delete</button>
       </div>
     </div>
 
     <script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
     <script src = "https://npmcdn.com/vue@1.0.25/dist/vue.min.js"></script>
-    <script src = "app.js"></script>
+    <script src = "assets/js/app.js"></script>
 
   </body>
 </html>

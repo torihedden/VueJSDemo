@@ -8,6 +8,8 @@ var ToriApp = new Vue({
     plot: '',
     posterSrc: '',
     rating: '',
+    year: '',
+    parameter: '',
     favorites: []
   },
   methods: {
@@ -24,20 +26,23 @@ var ToriApp = new Vue({
         ToriApp.$set("plot", data.Plot);
         ToriApp.$set("posterSrc", data.Poster);
         ToriApp.$set("rating", data.Rated);
+        ToriApp.$set("year", data.Year);
         ToriApp.$set("favButton", true);
       });
     },
 
-    addFav: function(title, rating){
-      console.log(title);
-      ToriApp.favorites.push({ fav: title, rate: rating})
-      console.log(ToriApp.favorites)
+    addFav: function(title, rating, year){
+      ToriApp.favorites.push({ fav: title, rate: rating, date: ToriApp.year});
+      localStorage.setItem("title", ToriApp.title);
     },
 
     deleteFav: function(index){
-      console.log(index);
       ToriApp.favorites.splice(index, 1);
-    }
+    },
+
+    // searchFav: function(){
+    //
+    // }
 
   }
 })
